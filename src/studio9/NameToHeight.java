@@ -20,8 +20,22 @@ public class NameToHeight {
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
 
-		// FIXME
-		throw new NotYetImplementedException();
-
+		Map <String, Integer> shortness = new HashMap<>();
+		
+		System.out.println("Please enter the name of a group member:");
+		String name = in.next();
+		while (!name.equals("quit")) {
+			System.out.println("Please enter group member's height in inches:");
+			int height = in.nextInt();
+			
+			shortness.put(name, height);
+			
+			System.out.println("Please enter the name of a group member:");
+			name = in.next();
+		}
+		for (String key: shortness.keySet()) {
+			System.out.println(key + ": " + shortness.get(key));
+		}
+		
 	}
 }
